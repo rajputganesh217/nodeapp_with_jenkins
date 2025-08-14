@@ -1,13 +1,12 @@
+var express = require('express');
+var app = express();
+
+// Respond with "hello world" for requests that hit our root "/"
 app.get('/', function (req, res) {
-  res.send(`
-    <html>
-      <head>
-        <title>My Node App</title>
-      </head>
-      <body style="background-color:#f0f0f0; text-align:center; padding:50px;">
-        <h1 style="color: green;">✅ Successfully deployed Node app</h1>
-        <p style="color: blue;">Using Docker, Jenkins, and running locally!</p>
-      </body>
-    </html>
-  `);
+    res.send('successfully deployed nodeapp using docker jenkins and its operating from local');
 });
+
+// Listen to port 3000 by default
+app.listen(process.env.PORT || 3000);
+
+module.exports = app;
